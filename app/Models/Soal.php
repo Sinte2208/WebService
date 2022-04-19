@@ -10,4 +10,6 @@ class Soal extends Model
     use HasFactory;
 
     protected $table = 'soals';
+
+    protected $fillable = ['nama_mk', 'dosen', 'jumlah_soal', 'keterangan'];
 }

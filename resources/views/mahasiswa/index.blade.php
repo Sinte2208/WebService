@@ -1,6 +1,6 @@
 @extends('template.master')
 
-@section('')
+@section('judul', 'Data Soal')
 
 @section('isi')
 <h1>Data Mahasiswa</h1>
@@ -9,9 +9,9 @@
     <thead>
         <tr>
             <th>No</th>
-            <th>NIK</th>
-            <th>Nama</th>
-            <th>Umur</th>
+            <th>NIM</th>
+            <th>Nama Mahasiswa</th>
+            <th>Semester</th>
             <th>Aksi</th>
         </tr>
     </thead>
@@ -20,11 +20,17 @@
 
         <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $row->nik }}</td>
+            <td>{{ $row->nim }}</td>
             <td>{{ $row->nama_mahasiswa }}</td>
             <td>{{ $row->semester}}</td>
             <td>
-                <a herf="">Hapus</a>
+                <form action="{{route('delete.mahasiswa', $row->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm"
+                    onclick="return confirm('Anda Yakin?')"
+                    >Hapus</button>
+                </form>
             </td>
         </tr>
         @endforeach

@@ -18,7 +18,7 @@
 
       @yield('isi')
 
-    <h1>Ini WEB Punya saya</h1>
+    
     
     </div>
 

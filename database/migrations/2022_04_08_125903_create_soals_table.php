@@ -15,8 +15,8 @@ class CreateSoalsTable extends Migration
     {
         Schema::create('soals', function (Blueprint $table) {
             $table->id();
-            $table->String('nama_mk');
-            $table->String('dosen');
+            $table->string('nama_mk');
+            $table->string('dosen');
             $table->integer('jumlah_soal');
             $table->text('keterangan');
             $table->timestamps();

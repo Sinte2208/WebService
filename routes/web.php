@@ -29,8 +29,11 @@ Route::view('master', 'template/master');
 //route untuk mahasiswa
 Route::get('data-mahasiswa', [MahasiswaC::class, 'index']);
 Route::get('add-mahasiswa', [MahasiswaC::class, 'create']);
+Route::post('simpan-mahasiswa', [MahasiswaC::class, 'store']);
+Route::delete('delete-mahasiswa/{id}', [MahasiswaC::class, 'destroy'])->name('delete.mahasiswa');
 
 //route untuk soal
-Route::get('Soal', [SoalController::class, 'index']);
-Route::get('Soal/create', [ControllersSoalController::class, 'create']);
-Route::get('Soal/store', [soalcontroller::class, 'store']);
+Route::get('data-soal', [SoalController::class, 'index']);
+Route::get('tambah-soal', [SoalController::class, 'create']);
+Route::post('simpan-soal', [SoalController::class, 'store']);
+Route::delete('delete-soal/{id}', [SoalController::class, 'destroy'])->name('delete.soal');

@@ -10,4 +10,8 @@ class Mahasiswa extends Model
     use HasFactory;
 
     protected $table = 'mahasiswa';
+
+    //public $timestamps = false;
+
+    protected $fillable = ['nim', 'nama_mahasiswa', 'semester'];
 }
